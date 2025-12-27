@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { HashLink } from "react-router-hash-link";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -9,40 +10,34 @@ const Navbar = () => {
     { name: "Home", href: "#home" },
     { name: "About Us", href: "#about" },
     { name: "Services", href: "#services" },
-    { name: "Fleet", href: "#fleets" },
     { name: "Why Choose Us", href: "#why-choose-us" },
     { name: "Destinations", href: "#destinations" },
     { name: "Branches", href: "#branches" },
   ];
 
-  // Scrollspy logic
-  useEffect(() => {
-    const sections = links
-      .map((link) => document.querySelector(link.href))
-      .filter(Boolean); // ignore undefined
+  // Scrollspy 
+ useEffect(() => {
+  const handleScroll = () => {
+    const scrollPos = window.scrollY + 120; // offset for sticky navbar
+    for (const link of links) {
+      const section = document.querySelector(link.href);
+      if (section) {
+        if (
+          scrollPos >= section.offsetTop &&
+          scrollPos < section.offsetTop + section.offsetHeight
+        ) {
+          setActive(link.name);
+          break;
+        }
+      }
+    }
+  };
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const link = links.find((l) => l.href === `#${entry.target.id}`);
-            if (link) setActive(link.name);
-          }
-        });
-      },
-      { threshold: 0.5 } // 50% of section visible
-    );
+  window.addEventListener("scroll", handleScroll);
+  handleScroll(); // initial check
 
-    sections.forEach((section) => {
-      if (section) observer.observe(section);
-    });
-
-    return () => {
-      sections.forEach((section) => {
-        if (section) observer.unobserve(section);
-      });
-    };
-  }, []);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
 
   const handleLinkClick = (name) => {
     setActive(name);
@@ -54,15 +49,15 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
         <div className="text-xl font-bold text-gray-800">
-          <img src="/logos.png" className="w-24" alt="" />
+          <img src="/logos.png" className="w-24" alt="Logo" />
         </div>
 
-        {/* Desktop Menu */}
         <ul className="hidden md:flex items-center gap-4">
           {links.map((link) => (
             <li key={link.name}>
-              <a
-                href={link.href}
+              <HashLink
+                smooth
+                to={`/${link.href}`}
                 onClick={() => handleLinkClick(link.name)}
                 className={`text-gray-700 border rounded-3xl px-3 py-2 font-medium transition-all duration-300 hover:scale-110 ${
                   active === link.name
@@ -71,7 +66,7 @@ const Navbar = () => {
                 }`}
               >
                 {link.name}
-              </a>
+              </HashLink>
             </li>
           ))}
         </ul>
@@ -83,7 +78,7 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Mobile Button */}
+        {/* Mobile Menu Button */}
         <button
           className="md:hidden text-gray-800"
           onClick={() => setOpen(!open)}
@@ -98,8 +93,9 @@ const Navbar = () => {
           <ul className="flex flex-col gap-4 px-6 py-4">
             {links.map((link) => (
               <li key={link.name}>
-                <a
-                  href={link.href}
+                <HashLink
+                  smooth
+                  to={`/${link.href}`}
                   onClick={() => handleLinkClick(link.name)}
                   className={`block text-gray-700 font-medium transition-all duration-300 ${
                     active === link.name
@@ -108,7 +104,7 @@ const Navbar = () => {
                   }`}
                 >
                   {link.name}
-                </a>
+                </HashLink>
               </li>
             ))}
           </ul>

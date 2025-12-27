@@ -2,16 +2,46 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const clients = [
-  "Government Departments",
-  "TEVTA Wood Working Centre",
-  "Mercy Corps",
-  "Helping Hand",
-  "Fouz International",
-  "Quantum Engineering",
-  "Sun Green Solar",
-  "WellCare Pharma",
-  "Abbott Laboratories",
-  "DS Pharma",
+  {
+    name: "Government Departments",
+    logo: "got.svg",
+  },
+  {
+    name: "TEVTA Wood Working Centre",
+    logo: "tevtta.png",
+  },
+  {
+    name: "Mercy Corps",
+    logo: "mc.jpg",
+  },
+  {
+    name: "Helping Hand",
+    logo: "hh.png",
+  },
+  {
+    name: "Fouz International",
+    logo: "fi.png",
+  },
+  {
+    name: "Quantum Engineering",
+    logo: "qe.png",
+  },
+  {
+    name: "Sun Green Solar",
+    logo: "sg.png",
+  },
+  {
+    name: "WellCare Pharma",
+    logo: "wh.png",
+  },
+  {
+    name: "Abbott Laboratories",
+    logo: "al.png",
+  },
+  {
+    name: "DS Pharma",
+    logo: "ds.png",
+  },
 ];
 
 const Clients = () => {
@@ -49,11 +79,17 @@ const Clients = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.05 }}
-              whileHover={{ y: -6 }}
-              className="group bg-white/80 backdrop-blur rounded-2xl p-8 text-center shadow-md hover:shadow-xl transition"
+              whileHover={{ y: -12 }}
+              className="bg-gradient-to-br from-white to-green-50 rounded-2xl p-8 text-center shadow-lg"
             >
-              <p className="font-semibold text-gray-800 group-hover:text-green-600 transition">
-                {client}
+              <img
+                src={client.logo}
+                alt={client.name}
+                className="h-16 mx-auto mb-4 object-contain"
+              />
+
+              <p className="font-semibold text-gray-800 hover:text-green-600 transition">
+                {client.name}
               </p>
             </motion.div>
           ))}

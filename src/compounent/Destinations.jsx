@@ -52,12 +52,21 @@ const Destinations = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.05 }}
               whileHover={{ y: -6 }}
-              className="group flex items-center justify-center gap-3 p-6 bg-white/80 backdrop-blur rounded-2xl shadow-md hover:shadow-xl transition"
+              className="bg-white/90 backdrop-blur rounded-2xl shadow-md hover:shadow-xl transition flex flex-col items-center justify-center p-6"
+              style={{ minHeight: "150px" }}
             >
-              <div className="p-2 rounded-xl bg-green-100 text-green-700 group-hover:bg-green-600 group-hover:text-white transition">
-                <MapPin size={20} />
+              {/* Icon + City Row */}
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2 rounded-xl bg-green-100 text-green-700 group-hover:bg-green-600 group-hover:text-white transition">
+                  <MapPin size={24} />
+                </div>
+                <span className="font-semibold text-gray-800 text-lg">{city}</span>
               </div>
-              <span className="font-semibold text-gray-800">{city}</span>
+
+              {/* Button */}
+              <button className="px-5 py-2 bg-green-700 text-white rounded-full text-sm font-medium hover:bg-green-800 transition">
+                Book Now
+              </button>
             </motion.div>
           ))}
         </div>

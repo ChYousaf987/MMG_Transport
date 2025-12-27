@@ -1,0 +1,67 @@
+export const serviceData = [
+  {
+    slug: "pickup",
+    title: "Pickup",
+    shortDesc: "Up to 500 KG",
+    desc: "Our pickup service is ideal for small-scale transportation needs, including household items, shop deliveries, and light commercial goods. It offers a cost-effective and reliable solution for short and long-distance deliveries. Perfect for quick, safe, and efficient transport within cities and nearby areas.",
+    video: "/pickup.mp4",
+  },
+  {
+    slug: "shahzore",
+    title: "Shahzore",
+    shortDesc: "2 Ton Capacity",
+    desc: "The Shahzore service is designed for medium-sized cargo transportation with a capacity of up to 2 tons. It is suitable for business shipments, furniture movement, and bulk deliveries. Our drivers ensure timely delivery with proper handling and safety throughout the journey.",
+    video: "/shahzore.mp4",
+  },
+  {
+    slug: "mazda",
+    title: "Mazda",
+    shortDesc: "5 Ton Capacity",
+    desc: "Mazda trucks provide a strong and dependable solution for transporting heavier goods up to 5 tons. This service is ideal for industrial supplies, wholesale products, and intercity transport. We ensure secure loading, smooth transit, and on-time delivery every time.",
+    video: "/mazda.mp4",
+  },
+  {
+    slug: "hino",
+    title: "Hino",
+    shortDesc: "10 Ton Capacity",
+    desc: "Our Hino transport service is built for heavy-duty logistics and large-scale cargo movement. With a 10-ton capacity, it is suitable for construction materials, factory goods, and commercial consignments. We prioritize safety, efficiency, and professional handling at all stages.",
+    video: "/hino.mp4",
+  },
+  {
+    slug: "ten-wheeler",
+    title: "Ten Wheeler",
+    shortDesc: "16 Ton Capacity",
+    desc: "The Ten Wheeler service is perfect for large and heavy cargo transportation across long distances. It supports up to 16 tons and is commonly used for industrial, infrastructure, and bulk material transport. Our experienced team ensures stable loading and secure delivery nationwide.",
+    video: "/ten-wheeler.mp4",
+  },
+  {
+    slug: "bedford-truck",
+    title: "Bedford Truck",
+    desc: "Our Bedford Truck service is designed for heavy-duty transportation with a capacity of up to 9 tons. It is ideal for carrying construction materials, machinery, and large commercial goods. This service ensures stable loading, safe transit, and reliable delivery across both urban and intercity routes.",
+    video: "/bed-ford.mp4",
+  },
+  {
+    slug: "20-feet-container",
+    title: "20 Feet Container",
+    desc: "The 20 Feet Container service is suitable for secure transportation of heavy and valuable cargo. It is commonly used for industrial shipments, wholesale goods, and export-related logistics. We ensure weather-protected, sealed, and safe delivery for all containerized shipments.",
+    video: "/20-feet-container.mp4",
+  },
+  {
+    slug: "40-feet-container",
+    title: "40 Feet Container",
+    desc: "Our 40 Feet Container service is ideal for large-scale industrial and commercial cargo transportation. It provides maximum space and safety for bulk shipments, factory goods, and long-distance logistics. This service is best suited for businesses requiring high-volume transport solutions.",
+    video: "/40-feet-container.mp4",
+  },
+  {
+    slug: "lifter-and-crane",
+    title: "Lifter & Crane",
+    desc: "The Lifter and Crane service is designed for safe handling and movement of extremely heavy equipment and machinery. It is ideal for construction sites, industrial installations, and warehouse operations. Our skilled operators ensure precise lifting, placement, and maximum safety at all times.",
+    video: "/lifter-crane.mp4",
+  },
+  {
+    slug: "loading-unloading",
+    title: "Loading/Unloading",
+    desc: "We provide professional loading and unloading services to ensure your goods are handled with care and precision. Our trained labor team uses proper techniques and equipment to prevent damage. This service is ideal for warehouses, events, factories, and commercial sites.",
+    video: "/loading-unloading.mp4",
+  },
+];
